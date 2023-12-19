@@ -2,6 +2,7 @@ import zadanie1.ListFilesInDirectory;
 import zadanie2.OperationsOnFile;
 import zadanie3.GeometricFigure;
 import zadanie3.Rectangle;
+import zadanie4.Square;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,5 +19,9 @@ public class Main {
         //Zadanie3
         //GeometricFigure rectangle1 = new Rectangle(2, 5);
         //System.out.println(rectangle1.calculateArea());
+
+        //Zadanie4
+        //GeometricFigure square = new Square(2,2);
+        //System.out.println(((Square) square).calculateDiameter());
         }
     }

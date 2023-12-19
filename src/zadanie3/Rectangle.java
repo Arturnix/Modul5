@@ -2,8 +2,8 @@ package zadanie3;
 
 public class Rectangle implements GeometricFigure {
 
-    private int width;
-    private int length;
+    protected int width;
+    protected int length;
 
     public Rectangle(int width, int length) {
         this.width = width;
