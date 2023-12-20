@@ -3,6 +3,7 @@ import zadanie2.OperationsOnFile;
 import zadanie3.GeometricFigure;
 import zadanie3.Rectangle;
 import zadanie4.Square;
+import zadanie5.FileComparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,5 +24,10 @@ public class Main {
         //Zadanie4
         //GeometricFigure square = new Square(2,2);
         //System.out.println(((Square) square).calculateDiameter());
+
+        //Zadanie5
+        //FileComparator fileComparator = new FileComparator();
+        //System.out.println(fileComparator.areTextFilesEqual("", ""));
         }
+
     }
