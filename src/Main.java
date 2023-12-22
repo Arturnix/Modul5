@@ -1,3 +1,4 @@
+import Zadanie6.ReverseFile;
 import zadanie1.ListFilesInDirectory;
 import zadanie2.OperationsOnFile;
 import zadanie3.GeometricFigure;
@@ -28,6 +29,10 @@ public class Main {
         //Zadanie5
         //FileComparator fileComparator = new FileComparator();
         //System.out.println(fileComparator.areTextFilesEqual("", ""));
+
+        //Zadanie6
+        ReverseFile reverseFile = new ReverseFile();
+        reverseFile.invertFile("");
         }
 
     }
