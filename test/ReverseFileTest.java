@@ -11,7 +11,7 @@ public class ReverseFileTest {
 
     ReverseFile testObject = new ReverseFile();
 
-    public String readFromFile(String filePath) {
+    private String readFromFile(String filePath) {
 
         String reversedFileContent = "";
         try {
