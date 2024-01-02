@@ -1,11 +1,12 @@
 package zadanie1;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ListFilesInDirectory {
 
     public void printDirectory(String directoryPath) {
-
 
         try {
 
@@ -16,8 +17,8 @@ public class ListFilesInDirectory {
                 System.out.println(files[i]);
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println("An unexpected error occurred.");
+            e.printStackTrace();
         }
     }
-
 }

@@ -1,5 +1,3 @@
-package zadanie3.test;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import zadanie3.GeometricFigure;

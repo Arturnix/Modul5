@@ -15,58 +15,64 @@ public class OperationsOnFile {
         System.out.println("Podaj nazwe pliku, ktory chcesz utworzyc:");
         String fileName = scanner.nextLine();
 
-            try {
+        if (!fileName.endsWith(".txt")) {
+            fileName += ".txt";
+        }
 
-                File file = new File(fileName + ".txt");
+        try (FileWriter fileWriter = new FileWriter("src/zadanie2/" + fileName)) {
 
-                if(file.exists() && file.canWrite()) {
-                    FileWriter fileWriter = new FileWriter(fileName + ".txt");
+            File file = new File("src/zadanie2/" + fileName);
+            file.createNewFile();
 
-                    System.out.println("Podaj dane do zapisania w pliku " + fileName + ".txt:");
-                    String fileContent = scanner.nextLine();
+            if (file.exists() && file.canWrite()) {
 
-                    int spaceCounter = 0;
-                    for(int i = 0; i < fileContent.length(); i++) {
+                System.out.println("Podaj dane do zapisania w pliku " + fileName);
+                String fileContent = scanner.nextLine();
 
-                        if(fileContent.charAt(i) == ' ') {
-                            spaceCounter++;
-                        }
-                        if(spaceCounter == 4) {
-                            fileWriter.write("\n");
-                                spaceCounter = 0;
-                        } else {
-                            fileWriter.write(fileContent.charAt(i));
-                        }
+                int spaceCounter = 0;
+                for (int i = 0; i < fileContent.length(); i++) {
+
+                    if (fileContent.charAt(i) == ' ') {
+                        spaceCounter++;
                     }
-
-                    scanner.close();
-                    fileWriter.close();
+                    if (spaceCounter == 4) {
+                        fileWriter.write("\n");
+                        spaceCounter = 0;
+                    } else {
+                        fileWriter.write(fileContent.charAt(i));
+                    }
                 }
-                return true;
-            } catch (IOException  e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-                return false;
+
+                scanner.close();
             }
+            return true;
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public void readFromFile(String fileName) {
 
-        try {
+       if (!fileName.endsWith(".txt")) {
+           fileName += ".txt";
+       }
 
-            File readFile = new File(fileName + ".txt");
-            Scanner scanner = new Scanner(readFile);
+        File readFile = new File(fileName);
 
-            while(scanner.hasNextLine()) {
-                System.out.println(scanner.nextLine());
+            try (Scanner scanner = new Scanner(readFile);){
+
+                while (scanner.hasNextLine()) {
+                    System.out.println(scanner.nextLine());
+                }
+
+            } catch (FileNotFoundException e) {
+                System.out.println("File not found!");
+                e.printStackTrace();
+            } catch (IOException e) {
+                System.out.println("Unexcpected error occurred!");
+                e.printStackTrace();
             }
-
-            scanner.close();
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Unexcpected error occurred!");
-            e.printStackTrace();
         }
     }
-
-}

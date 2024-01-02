@@ -3,20 +3,20 @@ package Zadanie6;
 import java.io.*;
 
 public class ReverseFile {
-
-   String[] fileWords;
     public boolean invertFile(String filepath) {
+
+        String[] fileWords;
 
         try {
 
             File fileToReverse = new File(filepath);
-            File reversedFile = new File("");
+            File reversedFile = new File("src/Zadanie6/reversedFile.txt");
 
 
             FileReader fileReader = new FileReader(fileToReverse);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            FileWriter fileWriter = new FileWriter("");
+            FileWriter fileWriter = new FileWriter(reversedFile);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
             String line;
