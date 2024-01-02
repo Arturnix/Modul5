@@ -33,8 +33,8 @@ public class Main {
         //System.out.println(fileComparator.areTextFilesEqual("src/zadanie5/plik1.txt", "src/zadanie5/plik2.txt"));
 
         //Zadanie6
-        //ReverseFile reverseFile = new ReverseFile();
-        //reverseFile.invertFile("src/Zadanie6/fileToReverse.txt");
+        ReverseFile reverseFile = new ReverseFile();
+        System.out.println(reverseFile.invertFile("src/Zadanie6/fileToReverse.txt"));
         }
 
     }
