@@ -47,4 +47,11 @@ public class ReverseFileTest {
         Assertions.assertEquals(".kota ma Ala", readFromFile("src/Zadanie6/reversedFile.txt"));
         //lub mozna tez wrzucic w plik odwrocony tekst i skorzystac z metody FileComparator
     }
+
+    @Test
+    public void zadanie7() {
+        if(testObject.invertFile("src/Zadanie6/fileToReverse.txt")) {
+            Assertions.assertEquals(".kota ma Ala", readFromFile("src/Zadanie6/reversedFile.txt"));
+        }
+    }
 }
